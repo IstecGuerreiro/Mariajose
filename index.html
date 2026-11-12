@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e7">
+  <meta name="description" content="Salgados e quiches caseiros da Maria José Costa, em Brejos de Azeitão. Consulte o menu e encomende por WhatsApp.">
+  <title>Maria José Costa — Salgados & Quiches</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --ink: #20271f;
+      --muted: #6c7167;
+      --tomato: #cf482e;
+      --tomato-dark: #a93624;
+      --green: #355b42;
+      --yellow: #f1c84b;
+      --line: #ded8cb;
+      --white: #fffdf8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; }
+    button { font: inherit; }
+    .top-note { background: var(--green); color: #fff; text-align: center; padding: 9px 16px; font-size: 12px; letter-spacing: .04em; }
+    .top-note strong { color: var(--yellow); font-weight: 700; }
+    header { height: 78px; display: flex; align-items: center; justify-content: space-between; max-width: 1240px; margin: auto; padding: 0 32px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border: 1.5px solid var(--tomato); border-radius: 50%; color: var(--tomato); font-family: var(--serif); font-size: 21px; }
+    .brand-name { font-family: var(--serif); font-size: 17px; font-weight: 700; line-height: 1.05; }
+    .brand-name span { display: block; margin-top: 4px; color: var(--muted); font: 600 9px var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 31px; font-size: 13px; font-weight: 600; }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--tomato); }
+    .nav-order { background: var(--tomato); color: white; padding: 12px 17px; border-radius: 3px; }
+    .nav-order:hover { background: var(--tomato-dark); color: white; }
+    .hero { max-width: 1240px; min-height: 515px; margin: 0 auto; padding: 30px 32px 52px; display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 55px; }
+    .eyebrow { color: var(--tomato); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+    .eyebrow:before { content: ''; width: 27px; height: 1px; background: currentColor; }
+    h1 { margin: 18px 0 16px; font: 600 clamp(45px, 5.2vw, 70px)/1.04 var(--serif); letter-spacing: 0; }
+    h1 em { color: var(--tomato); font-weight: 500; }
+    .hero-copy { max-width: 430px; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 26px; align-items: center; }
+    .button { min-height: 47px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 0 19px; border: 1px solid var(--tomato); border-radius: 3px; background: var(--tomato); color: white; text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s, transform .2s; }
+    .button:hover { background: var(--tomato-dark); transform: translateY(-2px); }
+    .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button.secondary:hover { border-color: var(--ink); background: transparent; }
+    .hero-meta { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; gap: 28px; color: var(--muted); font-size: 12px; }
+    .hero-meta strong { color: var(--ink); display: block; margin-bottom: 4px; font-size: 13px; }
+    .hero-photo { position: relative; height: 425px; min-width: 0; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; display: block; }
+    .photo-tag { position: absolute; left: -20px; bottom: 20px; background: var(--yellow); color: var(--ink); padding: 15px 20px; transform: rotate(-3deg); font: 600 15px var(--serif); box-shadow: 0 5px 20px #20271f20; }
+    .menu-section { background: var(--white); padding: 72px 32px 90px; }
+    .section-inner { max-width: 1176px; margin: auto; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .section-head h2, .contact-copy h2 { font: 600 43px/1.1 var(--serif); margin: 10px 0 0; }
+    .section-head p { color: var(--muted); font-size: 13px; margin: 0 0 5px; }
+    .price-note { color: #785f23 !important; background: #fbf2d5; padding: 9px 12px; border-radius: 2px; font-size: 11px !important; }
+    .menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px 19px; }
+    .item-card { min-width: 0; border-bottom: 1px solid var(--line); padding-bottom: 15px; }
+    .item-image { width: 100%; aspect-ratio: 1.27; object-fit: cover; display: block; border-radius: 2px; background: #e8dfce; }
+    .item-info { padding-top: 13px; }
+    .item-info h3 { font: 600 18px/1.2 var(--serif); margin: 0 0 6px; }
+    .item-info p { color: var(--muted); font-size: 12px; margin: 0; min-height: 18px; }
+    .item-bottom { display: flex; justify-content: flex-start; align-items: center; margin-top: 14px; }
+    .price { color: var(--green); font-size: 14px; font-weight: 700; }
+    .price small { color: var(--muted); font-size: 10px; font-weight: 500; }
+    .contact-section { background: #e8ebdf; padding: 72px 32px; }
+    .contact-inner { max-width: 1176px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .contact-copy p { color: var(--muted); line-height: 1.7; font-size: 14px; max-width: 430px; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px; border-left: 1px solid #c9cfc1; }
+    .detail-label { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; font-size: 10px; margin-bottom: 7px; }
+    .detail-value { font: 600 17px var(--serif); }
+    .detail-value a { text-decoration: none; }
+    .detail-value a:hover { color: var(--tomato); }
+    footer { max-width: 1240px; margin: auto; padding: 20px 32px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; font-size: 11px; }
+    @media (max-width: 860px) {
+      header { height: 70px; }
+      nav { gap: 16px; }
+      .hero { gap: 30px; min-height: 450px; }
+      .hero-photo { height: 350px; }
+      .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-inner { gap: 35px; }
+    }
+    @media (max-width: 620px) {
+      .top-note { font-size: 10px; }
+      header { padding: 0 19px; height: 66px; }
+      nav a:not(.nav-order) { display: none; }
+      nav { gap: 0; }
+      .nav-order { padding: 10px 12px; font-size: 11px; }
+      .hero { padding: 38px 20px 40px; display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
+      h1 { font-size: 51px; }
+      .hero-copy { font-size: 14px; }
+      .hero-meta { gap: 20px; }
+      .hero-photo { height: 290px; margin-left: 14px; }
+      .photo-tag { left: -14px; font-size: 13px; padding: 12px 15px; }
+      .menu-section { padding: 55px 20px 65px; }
+      .section-head { display: block; margin-bottom: 24px; }
+      .section-head h2, .contact-copy h2 { font-size: 37px; }
+      .section-head p { margin-top: 13px; }
+      .price-note { display: inline-block; line-height: 1.5; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 13px; }
+      .item-info h3 { font-size: 16px; }
+      .item-info p { font-size: 11px; }
+      .contact-section { padding: 55px 20px; }
+      .contact-inner { display: block; }
+      .contact-details { margin-top: 28px; padding: 22px 0 0; border-left: 0; border-top: 1px solid #c9cfc1; }
+      footer { padding: 18px 20px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-note">Encomendas para festas e momentos especiais <strong>·</strong> Feito em Brejos de Azeitão</div>
+  <header>
+    <a class="brand" href="#inicio" aria-label="Maria José Costa, início">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Maria José Costa<span>Salgados &amp; quiches</span></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#menu">Menu</a>
+      <a href="#contactos">Contactos</a>
+          <a class="nav-order" aria-label="Encomendar por WhatsApp" href="https://wa.me/351939382197?text=Ol%C3%A1%2C%20Maria%20Jos%C3%A9!%20Gostaria%20de%20fazer%20uma%20encomenda.%20Pode%20confirmar%20a%20disponibilidade%2C%20quantidades%20e%20pre%C3%A7os%3F" target="_blank" rel="noopener">Encomendar ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Sabor caseiro, feito com carinho</div>
+        <h1>Petiscos que<br>juntam à <em>mesa.</em></h1>
+        <p class="hero-copy">Rissóis, croquetes, empadas e muitas outras delícias preparadas por Maria José. Escolha os seus favoritos e encomende diretamente.</p>
+        <div class="hero-actions">
+          <a class="button" href="#menu">Ver o menu <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>Brejos de Azeitão</strong>Produção caseira</div>
+          <div><strong>Por encomenda</strong>Fale connosco</div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/02024_0414_Rissole_%28rissol%29.jpg/960px-02024_0414_Rissole_%28rissol%29.jpg" alt="Rissol dourado">
+        <div class="photo-tag">Feitos à mão, com sabor a casa</div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-inner">
+        <div class="section-head">
+          <div><div class="eyebrow">Escolha os seus favoritos</div><h2>O menu</h2></div>
+          <p class="price-note">Preços de exemplo. Fotos ilustrativas dos tipos de salgado, não dos produtos da Maria José.</p>
+        </div>
+        <div class="menu-grid" id="menu-grid"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contactos">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <div class="eyebrow">Vamos preparar a sua encomenda?</div>
+          <h2>Fale diretamente<br>com a Maria José.</h2>
+          <p>Para confirmar disponibilidade, quantidades e preços, ligue ou envie uma mensagem. Encomendas com antecedência são sempre bem-vindas.</p>
+          <a class="button" href="https://wa.me/351939382197?text=Ol%C3%A1%2C%20Maria%20Jos%C3%A9!%20Gostaria%20de%20fazer%20uma%20encomenda.%20Pode%20confirmar%20a%20disponibilidade%2C%20quantidades%20e%20pre%C3%A7os%3F" target="_blank" rel="noopener">Encomendar por WhatsApp ↗</a>
+        </div>
+        <div class="contact-details">
+          <div><div class="detail-label">Telefone / WhatsApp</div><div class="detail-value"><a href="https://wa.me/351939382197?text=Ol%C3%A1%2C%20Maria%20Jos%C3%A9!%20Gostaria%20de%20fazer%20uma%20encomenda.%20Pode%20confirmar%20a%20disponibilidade%2C%20quantidades%20e%20pre%C3%A7os%3F" target="_blank" rel="noopener">939 382 197</a></div></div>
+          <div><div class="detail-label">Localidade</div><div class="detail-value">Brejos de Azeitão</div></div>
+          <div><div class="detail-label">Responsável</div><div class="detail-value">Maria José Costa</div></div>
+          <div><div class="detail-label">Especialidade</div><div class="detail-value">Salgados e quiches</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>Maria José Costa · Salgados &amp; Quiches</span>
+    <span>Brejos de Azeitão · Tel. 939 382 197</span>
+    <details class="photo-credits">
+      <summary>Créditos das fotografias</summary>
+      <p>Rissol: <a href="https://commons.wikimedia.org/wiki/File:02024_0414_Rissole_(rissol).jpg">Silar</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Croquete: <a href="https://commons.wikimedia.org/wiki/File:Croquette-1.jpg">Nagahito Yuki</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Coxinha: <a href="https://commons.wikimedia.org/wiki/File:Coxinha.jpg">Tom B</a>, domínio público.</p>
+      <p>Empadas e massa tenra: <a href="https://commons.wikimedia.org/wiki/File:Empanada_-_Stu_Spivack.jpg">Stu Spivack</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Almofadas: <a href="https://commons.wikimedia.org/wiki/File:Empanada_de_Vigan.jpg">Jessartcam</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Pastéis de bacalhau: <a href="https://commons.wikimedia.org/wiki/File:Bolinho_de_bacalhau.jpg">GostinhoDeBrasil</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      <p>Rolo de salsicha: <a href="https://commons.wikimedia.org/wiki/File:Home_made_sausage_roll_(cross_section)_-_The_Coffee_Corner_2024-12-29.jpg">Andy Li</a>, CC0. Misto: <a href="https://commons.wikimedia.org/wiki/File:Napolitanas_de_Jam%C3%B3n_y_queso.JPG">Tamorlan</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Chamuças: <a href="https://commons.wikimedia.org/wiki/File:Bangladeshi_street_food_Samosa_and_Puri.jpg">Borhan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Quiche: <a href="https://commons.wikimedia.org/wiki/File:Quiche_Lorraine_-_Massachusetts.jpg">Daderot</a>, CC0.</p>
+    </details>
+  </footer>
+
+  <script>
+    const products = [
+      { name: 'Rissóis de camarão', description: 'Cremosos e douradinhos', price: 1.30, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/02024_0414_Rissole_%28rissol%29.jpg/960px-02024_0414_Rissole_%28rissol%29.jpg' },
+      { name: 'Croquetes', description: 'Um clássico de carne', price: 1.20, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Croquette-1.jpg/960px-Croquette-1.jpg' },
+      { name: 'Coxinhas de frango', description: 'Recheio generoso de frango', price: 1.40, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Coxinha.jpg/960px-Coxinha.jpg' },
+      { name: 'Empadas', description: 'Massa tenra e recheio caseiro', price: 1.50, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Empanada_-_Stu_Spivack.jpg/960px-Empanada_-_Stu_Spivack.jpg' },
+      { name: 'Almofadas de carne', description: 'Recheadas e acabadas de fazer', price: 1.40, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Empanada_de_Vigan.jpg/960px-Empanada_de_Vigan.jpg' },
+      { name: 'Pastéis de bacalhau', description: 'Com bacalhau e salsa', price: 1.30, image: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Bolinho_de_bacalhau.jpg' },
+      { name: 'Rolo de salsicha', description: 'Enrolado em massa folhada', price: 1.20, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Home_made_sausage_roll_%28cross_section%29_-_The_Coffee_Corner_2024-12-29.jpg/960px-Home_made_sausage_roll_%28cross_section%29_-_The_Coffee_Corner_2024-12-29.jpg' },
+      { name: 'Misto de queijo e fiambre', description: 'Uma combinação que sabe sempre bem', price: 1.30, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Napolitanas_de_Jam%C3%B3n_y_queso.JPG/960px-Napolitanas_de_Jam%C3%B3n_y_queso.JPG' },
+      { name: 'Massa tenra', description: 'Recheio à escolha: frango ou carne', price: 1.40, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Empanada_-_Stu_Spivack.jpg/960px-Empanada_-_Stu_Spivack.jpg' },
+      { name: 'Chamuças de frango', description: 'Com piri-piri (confirmar)', price: 1.40, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Bangladeshi_street_food_Samosa_and_Puri.jpg/960px-Bangladeshi_street_food_Samosa_and_Puri.jpg' },
+      { name: 'Chamuças vegetarianas', description: 'Opção sem carne', price: 1.40, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Bangladeshi_street_food_Samosa_and_Puri.jpg/960px-Bangladeshi_street_food_Samosa_and_Puri.jpg' },
+      { name: 'Quiches', description: 'Sabores e tamanhos por encomenda', price: 12.00, unit: 'unidade', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Quiche_Lorraine_-_Massachusetts.jpg/960px-Quiche_Lorraine_-_Massachusetts.jpg' }
+    ];
+    const menuGrid = document.querySelector('#menu-grid');
+    const euro = new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR' });
+
+    products.forEach((product, index) => {
+      const card = document.createElement('article');
+      card.className = 'item-card';
+      const image = document.createElement('img');
+      image.className = 'item-image';
+      image.src = product.image;
+      image.alt = product.name;
+      image.loading = index < 4 ? 'eager' : 'lazy';
+      const info = document.createElement('div');
+      info.className = 'item-info';
+      const title = document.createElement('h3');
+      title.textContent = product.name;
+      const description = document.createElement('p');
+      description.textContent = product.description;
+      const bottom = document.createElement('div');
+      bottom.className = 'item-bottom';
+      const price = document.createElement('span');
+      price.className = 'price';
+      price.innerHTML = `${euro.format(product.price)} <small>/ ${product.unit || 'un.'}</small>`;
+      bottom.append(price);
+      info.append(title, description, bottom);
+      card.append(image, info);
+      menuGrid.append(card);
+    });
+
+  </script>
+</body>
+</html>
